@@ -87,8 +87,8 @@ SELECT * FROM Person]]></console>
           <port value="5432" />
           <database value="springMVC" />
           <type value="USER_PASSWORD" />
-          <user value="" />
-          <deprecated-pwd value="" />
+          <user value="postgres" />
+          <deprecated-pwd value="cG9zdGdyZXM=" />
         </database>
         <properties>
           <auto-commit value="true" />
