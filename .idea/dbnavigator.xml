@@ -29,12 +29,21 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="6daaa723-0c2e-46bd-be39-c1a5b5b06321">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[CREATE TABLE Person ( id int, namePerson varchar, age int, email varchar)
-INSERT INTO Person VALUES (2, 'Mike', 38, 'mike@mail.ru')
-INSERT INTO Person VALUES (3, 'Nick', 38, 'nick@mail.ru')
-INSERT INTO Person VALUES (4, 'Bob', 44, 'bob@mail.ru')
-INSERT INTO Person VALUES (5, 'Tym', 33, 'tym@mail.ru')
-SELECT * FROM Person]]></console>
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[CREATE TABLE Person ( id int, namePerson varchar, age int, email varchar);
+
+INSERT INTO Person VALUES (2, 'Mike', 38, 'mike@mail.ru');
+INSERT INTO Person VALUES (3, 'Nick', 38, 'nick@mail.ru');
+INSERT INTO Person VALUES (4, 'Bob', 44, 'bob@mail.ru');
+INSERT INTO Person VALUES (5, 'Tym', 33, 'tym@mail.ru');
+
+SELECT * FROM Person;
+
+DROP TABLE Person;
+
+CREATE TABLE Person ( id serial, namePerson varchar, age int, email varchar);
+
+INSERT INTO Person (nameperson, age, email) VALUES ( 'Mike', 38, 'mike@mail.ru');
+INSERT INTO Person (nameperson, age, email) VALUES ( 'Tom', 28, 'tom@mail.ru');]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
