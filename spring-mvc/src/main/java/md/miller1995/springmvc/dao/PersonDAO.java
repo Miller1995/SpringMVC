@@ -31,14 +31,19 @@ public class PersonDAO {
                                                             new Object[]{id}, new PersonMapper()).stream().findAny().orElse(null);
     }
 
+    public Person show(String email){
+        return jdbcTemplate.query("SELECT * FROM Person WHERE email=?",
+                                                            new Object[]{email}, new PersonMapper()).stream().findAny().orElse(null);
+    }
+
     public void save(Person person){
-        jdbcTemplate.update("INSERT INTO Person(namePerson, age, email) VALUES (?, ?, ?)",
-                                                                                    person.getName(), person.getAge(), person.getEmail());
+        jdbcTemplate.update("INSERT INTO Person(namePerson, age, email, address) VALUES (?, ?, ?, ?)",
+                                                                                    person.getName(), person.getAge(), person.getEmail(), person.getAddress());
     }
 
     public void update(int id, Person updatePerson){
-        jdbcTemplate.update("UPDATE Person SET namePerson=?, age=?, email=? WHERE id=?",
-                                                    updatePerson.getName(), updatePerson.getAge(), updatePerson.getEmail(), id);
+        jdbcTemplate.update("UPDATE Person SET namePerson=?, age=?, email=?, address=? WHERE id=?",
+                                                    updatePerson.getName(), updatePerson.getAge(), updatePerson.getEmail(), updatePerson.getAddress(), id);
     }
 
     public void delete(int id) {
@@ -88,7 +93,7 @@ public class PersonDAO {
     private List<Person> create1000People(){
         List<Person> people = new ArrayList<>();
         for (int i = 1; i < 1000; i++){
-            people.add(new Person(i, "Name" + i, 30, "test" + i + "mail.ru"));
+            people.add(new Person(i, "Name" + i, 30, "test" + i + "mail.ru", "address"));
         }
         return people;
     }
