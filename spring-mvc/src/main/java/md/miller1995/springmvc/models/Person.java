@@ -2,6 +2,7 @@ package md.miller1995.springmvc.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Person")
@@ -23,6 +24,9 @@ public class Person {
 
     @Column(name = "address")
     private String address;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Item> items;
 
     public Person(){}
 
