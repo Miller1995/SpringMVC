@@ -33,7 +33,7 @@ public class Person {
         this.address = address;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
