@@ -31,15 +31,17 @@
     <connection id="6daaa723-0c2e-46bd-be39-c1a5b5b06321">
       <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[CREATE TABLE Person( 
     id serial primary key, 
-    namePerson varchar NOT NULL, 
+    "name" varchar NOT NULL, 
     age int CHECK(age > 0), 
     email varchar UNIQUE,
     address varchar not null
     );
 
-insert into person(nameperson, "age", email, address) values ('Mike', 33, 'mike@mail.ru', 'Moldova, Chisinau, 123456')
+insert into person(name, "age", email, address) values ('Mike', 33, 'mike@mail.ru', 'Moldova, Chisinau, 123456')
 
-select * from person]]></console>
+select * from person
+
+drop table person;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
